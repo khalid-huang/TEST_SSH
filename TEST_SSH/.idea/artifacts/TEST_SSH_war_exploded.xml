@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TEST_SSH:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/TEST_SSH_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="TEST_SSH/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TEST_SSH" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Hibernate 5.2.9-5.2.9" />
+          <element id="library" level="project" name="Spring-4.3.7.RELEASE" />
+          <element id="library" level="project" name="Struts 2-2.3.20.1" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.26" />
+          <element id="library" level="project" name="org.apache.commons:commons-dbcp2:2.1" />
+          <element id="library" level="project" name="spring-web-3.0.5.RELEASE" />
+          <element id="library" level="project" name="struts2-spring-plugin-2.3.24" />
+          <element id="library" level="project" name="log4j:log4j:1.2.14" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

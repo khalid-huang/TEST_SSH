@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="test.TestService" id="testService">
+        <property name="name" value="spring"></property>
+    </bean>
+
+    <!-- data connection -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/TESTDB"></property>
+        <property name="username" value="root"/>
+        <property name="password" value="qinkai"/>
+    </bean>
+
+
+    <!-- session factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/TESTDB</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:bean/Addresslist.hbm.xml</value>
+                <value>classpath:bean/Addresslist.hbm.xml</value>
+            </list>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>bean.Addresslist</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--hibernate测试加入-->
+    <bean id="address" class="Service.AddressImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!--struts2引入加入-->
+    <bean id="addressAction" class="action.AddressAction">
+        <property name="address" ref="address"></property>
+    </bean>
+</beans>

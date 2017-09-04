@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="TESTDB@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="TESTDB">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="RUNOOB"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="test2"/>
+    <table id="9" parent="2" name="USER"/>
+    <table id="10" parent="2" name="addresslist"/>
+    <table id="11" parent="2" name="department"/>
+    <table id="12" parent="2" name="employee"/>
+    <column id="13" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="15" parent="9" name="password">
+      <Position>3</Position>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="16" parent="9" name="mobile">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <key id="17" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="10" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="phone">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="21" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="11" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="11" name="DEPARTMENT_NAME">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="24" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="12" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="12" name="EMAIL">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="12" name="BIRTH">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="28" parent="12" name="CREATE_TIME">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="29" parent="12" name="DEPT_ID">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="30" parent="12" name="DEPT_ID">
+      <ColNames>DEPT_ID</ColNames>
+    </index>
+    <key id="31" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="12" name="employee_ibfk_1">
+      <ColNames>DEPT_ID</ColNames>
+      <RefSchemaName>TESTDB</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

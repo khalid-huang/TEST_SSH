@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-web-3.0.5.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-web-3.0.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
